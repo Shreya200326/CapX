@@ -1,16 +1,5 @@
 # Install necessary libraries
-!pip install praw asyncpraw pandas matplotlib seaborn textblob streamlit nest_asyncio
-
-import re
-from collections import Counter
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from textblob import TextBlob
-import asyncio
-import asyncpraw
-import streamlit as st
-import nest_asyncio
+pip install -r requirements.txt
 
 nest_asyncio.apply()
 
