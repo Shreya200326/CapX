@@ -1,0 +1,8 @@
+praw
+asyncpraw
+pandas
+matplotlib
+seaborn
+textblob
+streamlit
+nest_asyncio
