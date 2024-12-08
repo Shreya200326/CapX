@@ -1,6 +1,13 @@
-# Install necessary libraries
-pip install -r requirements.txt
-
+import re
+from collections import Counter
+from textblob import TextBlob
+import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
+import nest_asyncio
+import asyncio
+import asyncpraw
+import streamlit as st
 nest_asyncio.apply()
 
 # Asynchronous function to fetch Reddit data
