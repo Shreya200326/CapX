@@ -73,23 +73,6 @@ pip install asyncpraw praw textblob matplotlib pandas seaborn nest_asyncio
 
 ---
 
-## 🧪 Example Output
-
-* 📊 **Sentiment Chart**:
-  ![Sentiment Chart Example](#)
-
-* 📈 **Daily Trends**:
-  ![Trend Plot Example](#)
-
-* 💡 **Buy/Sell Recommendations**:
-
-  ```
-  Based on the analysis, the following stocks show potential buy signals:
-  - 'Apple will explode after earnings!' with an overall sentiment of 0.45
-  ```
-
----
-
 ## 📁 File Structure
 
 ```
