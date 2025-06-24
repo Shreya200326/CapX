@@ -1,47 +1,101 @@
 # CapX
-Analyzed and predict stock movements by extracting and analyzing social media data e.g., from  Reddit
-**Overview
-This project performs sentiment analysis on posts from the subreddit r/stockstobuytoday. It utilizes the Reddit API to fetch the top posts, analyze their sentiment, and visualize the results.
+Here’s a detailed `README.md` file for your Reddit sentiment analysis project:
+# 📈 Reddit Stock Sentiment Analyzer
+This project is a **sentiment analysis tool** built using Python to analyze stock-related discussions on Reddit. It pulls top posts from the `r/stockstobuytoday` subreddit and performs sentiment analysis using **TextBlob**, identifies potential **buy/sell signals**, visualizes sentiment trends, and tracks **stock symbol mentions**.
+---
 
-**Dependencies
-To run this project, you need the following Python packages:
-asyncpraw : Asynchronous PRAW for accessing the Reddit API.
-pandas: Data manipulation and analysis.
-textblob: Natural language processing for sentiment analysis.
-matplotlib: Plotting library for data visualization.
-seaborn: Statistical data visualization based on matplotlib.
-nest_asyncio: A workaround for using asyncio in Jupyter Notebooks.
-You can install the required packages using pip:
-#pip install asyncpraw pandas textblob matplotlib seaborn nest_asyncio
+## 📌 Features
 
-**Setup
-Create a Reddit App:
+* 🔍 **Fetches top 100 posts** from `r/stockstobuytoday` asynchronously using `asyncpraw`
+* 📊 Performs **sentiment analysis** on both title and body of posts
+* 🔁 Tracks **frequency of stock symbols** mentioned (e.g., AAPL, TSLA)
+* 🛍️ Identifies **buy/sell signals** based on polarity thresholds
+* 📈 Plots:
 
-1.Go to Reddit's App Preferences.
-2.Create a new application.
-3.Note down your client_id, client_secret, and user_agent.
-4.Replace Credentials:
+  * Sentiment distribution
+  * Stock mentions frequency
+  * Daily sentiment trends
+* 💡 Generates **actionable recommendations** based on sentiment scores
 
-Open the script and replace the placeholders with your Reddit app credentials in the asyncpraw.Reddit initialization section:
-##
-reddit = asyncpraw.Reddit(
-    client_id='YOUR_CLIENT_ID',
-    client_secret='YOUR_CLIENT_SECRET',
-    user_agent='YOUR_USER_AGENT'
-)##
-**Running the Code:
-Ensure you have Python installed (preferably Python 3.7 or higher).
-Run the script in an environment that supports asynchronous code (like Jupyter Notebook or an appropriate IDE).
-Call the asyncio.run(main()) function to execute the data fetching and analysis.
+---
 
-**Output
-The script fetches the top 100 posts from r/stockstobuytoday and performs the following:
+## 🛠️ Technologies Used
 
-1.Sentiment Analysis: Analyzes both the titles and bodies of the posts to categorize them as positive, negative, or neutral.
-2.Frequency Analysis: Counts the frequency of stock mentions in the titles.
-3.Visualizations: Plots sentiment distribution and stock mention frequencies.
-4.Buy/Sell Recommendations: Generates possible buy and sell signals based on sentiment analysis.
-**Troubleshooting
-Ensure that you have an active internet connection.
-Check your Reddit app credentials if you encounter authentication errors.
-Make sure the necessary packages are installed.
+* `asyncpraw` – Asynchronous Reddit API Wrapper
+* `TextBlob` – Sentiment Analysis
+* `matplotlib` & `seaborn` – Data Visualization
+* `pandas` – Data Handling
+* `re` & `collections.Counter` – Regex for symbol extraction and frequency count
+
+---
+
+## 📦 Installation
+
+1. Clone the repository or copy the code into your Jupyter Notebook / Google Colab environment.
+
+2. Install the required libraries:
+
+```bash
+pip install asyncpraw praw textblob matplotlib pandas seaborn nest_asyncio
+```
+
+> ✅ Tip: If using Google Colab, prefix `!` before the commands:
+
+```python
+!pip install asyncpraw praw textblob matplotlib pandas seaborn nest_asyncio
+```
+
+---
+
+## 🧠 How It Works
+
+1. **Data Collection**:
+   Connects to Reddit using `asyncpraw`, retrieves top posts from `r/stockstobuytoday`.
+
+2. **Sentiment Analysis**:
+   Uses `TextBlob` to analyze the polarity of titles and bodies of posts.
+
+3. **Stock Mentions**:
+   Uses regex to extract stock tickers (capitalized words with 1–5 letters).
+
+4. **Signal Generation**:
+
+   * Posts with polarity > 0.1 → potential **buy** signals
+   * Posts with polarity < -0.1 → potential **sell** signals
+
+5. **Visualization**:
+
+   * Bar charts for sentiment distribution and stock mentions
+   * Line plots for daily sentiment trends
+
+6. **Recommendations**:
+   Summarizes findings in plain English for actionable insights.
+
+---
+
+## 🧪 Example Output
+
+* 📊 **Sentiment Chart**:
+  ![Sentiment Chart Example](#)
+
+* 📈 **Daily Trends**:
+  ![Trend Plot Example](#)
+
+* 💡 **Buy/Sell Recommendations**:
+
+  ```
+  Based on the analysis, the following stocks show potential buy signals:
+  - 'Apple will explode after earnings!' with an overall sentiment of 0.45
+  ```
+
+---
+
+## 📁 File Structure
+
+```
+Capx1.ipynb            # Main Jupyter notebook (or Colab notebook)
+README.md              # Documentation
+```
+
+---
+
