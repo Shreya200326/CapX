@@ -1,7 +1,7 @@
 # CapX
 Here’s a detailed `README.md` file for your Reddit sentiment analysis project:
 # 📈 Reddit Stock Sentiment Analyzer
-This project is a **sentiment analysis tool** built using Python to analyze stock-related discussions on Reddit. It pulls top posts from the `r/stockstobuytoday` subreddit and performs sentiment analysis using **TextBlob**, identifies potential **buy/sell signals**, visualizes sentiment trends, and tracks **stock symbol mentions**.
+This project is a sentiment analysis tool built using Python to analyze stock-related discussions on Reddit. It pulls top posts from the `r/stockstobuytoday` subreddit and performs sentiment analysis using **TextBlob**, identifies potential **buy/sell signals**, visualizes sentiment trends, and tracks **stock symbol mentions**.
 ---
 
 ## 📌 Features
